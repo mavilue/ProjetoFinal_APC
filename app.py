@@ -52,7 +52,13 @@ if not df.empty and "Despesa" in df["tipo_movimentacao"].values:
     st.subheader("📊 Gastos por Categoria")
     despesas = df[df["tipo_movimentacao"] == "Despesa"]
     categorias = despesas.groupby("categoria_select")["valor_insert"].sum()
-    st.bar_chart(categorias)
+
+# grafico de pizza
+    fig, ax = plt.subplots()
+    ax.pie(categorias, labels=categorias.index, autopct='%1.1f%%', startangle=90)
+    ax.axis('equal')
+    ax.legend(categorias.index, title="Despesas", loc="center left", bbox_to_anchor=(1, 0, 0.5, 1))
+    st.pyplot(fig)
 
 # Botões de salvar e carregar
 col1, col2 = st.columns(2)
