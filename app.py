@@ -35,6 +35,17 @@ if st.button("Adicionar"):
         add_transaction(categoria, tipo_mov, valor, descricao, data_format)
         st.success("✅ Movimentação adicionada com sucesso!")
 
+        # Salva automaticamente após adicionar
+        df = pd.DataFrame(st.session_state['transactions'])
+        salvar_dados(df)
+        st.toast("💾 Dados salvos automaticamente!")
+
+        # Atualiza interface
+        st.rerun()
+        
+        
+        
+        
 # Criar DataFrame
 df = pd.DataFrame(st.session_state['transactions'])
 
@@ -61,13 +72,9 @@ if not df.empty and "Despesa" in df["tipo_movimentacao"].values:
     st.pyplot(fig)
 
 # Botões de salvar e carregar
-col1, col2 = st.columns(2)
-with col1:
-    if st.button("💾 Salvar dados"):
-        salvar_dados(df)
-
-with col2:
-    if st.button("📂 Carregar dados salvos"):
-        novo_df = carregar_dados()
-        if novo_df is not None:
-            df = novo_df
+# Botão de carregar dados
+if st.button("📂 Carregar dados salvos"):
+    novo_df = carregar_dados()
+    if novo_df is not None:
+        st.toast("✅ Dados carregados com sucesso!")
+        st.rerun()
