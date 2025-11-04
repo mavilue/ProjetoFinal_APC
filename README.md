@@ -45,7 +45,7 @@ controle_gastos/
 
 ---
 
-## 🧩 Descrição dos Arquivos
+## Descrição dos Arquivos
 
 ### **1. app.py**
 Arquivo principal do aplicativo.  
@@ -77,7 +77,7 @@ Conteúdo:
 
 ---
 
-## 💻 Como Executar o Projeto
+## Como Executar o Projeto
 
 ### 1. Clonar o repositório
 ```bash
@@ -98,7 +98,9 @@ pip install -r requirements.txt
 ``` bash
 streamlit run app.py
 ```
-### Funcionamento do Sistema
+---
+
+## Funcionamento do Sistema
 
 - O usuário insere os dados da transação (categoria, tipo, valor, descrição, data).
 - O app salva automaticamente no arquivo data.csv.
@@ -106,13 +108,13 @@ streamlit run app.py
 - As transações são exibidas em formato de tabela interativa.
 - Ao reiniciar o app, os dados anteriores são carregados automaticamente.
 
-### Considerações sobre o Arquivo data.csv
+## Considerações sobre o Arquivo data.csv
 
 - O arquivo é gerado automaticamente.
 - Não deve ser versionado no GitHub (adicionar ao .gitignore).
 - Caso o arquivo não exista, o sistema cria um novo automaticamente.
 
-### Melhorias Futuras
+## Melhorias Futuras
 
 - Implementar edição e remoção de transações (CRUD completo).
 - Criar filtros por categoria e intervalo de datas.
