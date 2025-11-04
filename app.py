@@ -67,7 +67,7 @@ df.index = df.index + 1
 # Formata a coluna de valores com R$ e separadores de milhar
 df_estilizado = df.style.format({"VALOR": formatar_valor})
 
-# Exibe a tabela 
+# Exibe a tabela estilizada
 st.dataframe(df_estilizado)
 
 # Se houver despesas, gera o gráfico de pizza por categoria
