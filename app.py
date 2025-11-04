@@ -11,7 +11,7 @@ from utils import calcular_saldo
 # Configura a aparência e informações da página
 st.set_page_config(page_title="Controle de Gastos", page_icon="💰", layout="centered")
 
-# Título principal da aplicação
+# Título da aplicação
 st.title("💰 CONTROLE DE GASTOS PESSOAIS")
 # Inicializa a sessão (cria as variáveis se ainda não existirem)
 init_session()
@@ -67,7 +67,7 @@ df.index = df.index + 1
 # Formata a coluna de valores com R$ e separadores de milhar
 df_estilizado = df.style.format({"VALOR": formatar_valor})
 
-# Exibe a tabela estilizada
+# Exibe a tabela 
 st.dataframe(df_estilizado)
 
 # Se houver despesas, gera o gráfico de pizza por categoria
